@@ -10,6 +10,22 @@ data:extend({
     effects = {
       {
         type = "unlock-recipe",
+        recipe = "angels-valve-inspector",
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "angels-valve-overflow",
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "angels-valve-one-way",
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "angels-valve-top-up",
+      },
+      {
+        type = "unlock-recipe",
         recipe = "angels-storage-tank-3",
       },
     },

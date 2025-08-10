@@ -73,6 +73,7 @@ require("prototypes.buildings.oil-refinery")
 require("prototypes.buildings.steam-cracker")
 require("prototypes.buildings.flare-stack")
 require("prototypes.buildings.electric-boiler")
+require("prototypes.buildings.valves")
 require("prototypes.buildings.storage-tanks")
 
 require("prototypes.items.petrochem-basics")
