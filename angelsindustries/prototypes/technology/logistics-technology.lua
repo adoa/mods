@@ -32,6 +32,10 @@ data:extend({
         type = "unlock-recipe",
         recipe = "angels-logistic-chest-storage",
       },
+      {
+        type = "create-ghost-on-entity-death",
+        modifier = true
+      },
     },
     unit = {
       count = 50,
@@ -67,6 +71,14 @@ data:extend({
       {
         type = "unlock-recipe",
         recipe = "angels-logistic-chest-requester",
+      },
+      {
+        type = "character-logistic-requests",
+        modifier = true
+      },
+      {
+        type = "character-logistic-trash-slots",
+        modifier = 30
       },
     },
     unit = {
