@@ -1,6 +1,5 @@
 local OV = angelsmods.functions.OV
 
-OV.disable_technology({ "angels-yellow-loader", "angels-red-loader", "angels-blue-loader" })
 OV.add_unlock("lamp", "angels-lamp")
 
 if mods["bobvehicleequipment"] then
