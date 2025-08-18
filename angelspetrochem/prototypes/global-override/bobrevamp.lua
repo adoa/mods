@@ -5,14 +5,10 @@ if mods["bobrevamp"] then
   -----------------------------------------------------------------------------
   -- SOLID FUEL ---------------------------------------------------------------
   -----------------------------------------------------------------------------
-  move_item("angels-solid-fuel-from-light-oil", "angels-petrochem-fuel", "e[bob]-a", "recipe")
-  move_item("angels-solid-fuel-from-petroleum-gas", "angels-petrochem-fuel", "e[bob]-b", "recipe")
-  move_item("angels-solid-fuel-from-heavy-oil", "angels-petrochem-fuel", "e[bob]-c", "recipe")
+  move_item("solid-fuel-from-light-oil", "angels-petrochem-fuel", "e[bob]-a", "recipe")
+  move_item("solid-fuel-from-petroleum-gas", "angels-petrochem-fuel", "e[bob]-b", "recipe")
+  move_item("solid-fuel-from-heavy-oil", "angels-petrochem-fuel", "e[bob]-c", "recipe")
   move_item("bob-solid-fuel-from-hydrogen", "angels-petrochem-fuel", "e[bob]-d", "recipe")
-  move_item("angels-solid-fuel-from-light-oil", "angels-petrochem-fuel", "e[bob]-a")
-  move_item("angels-solid-fuel-from-petroleum-gas", "angels-petrochem-fuel", "e[bob]-b")
-  move_item("angels-solid-fuel-from-heavy-oil", "angels-petrochem-fuel", "e[bob]-c")
-  move_item("bob-solid-fuel-from-hydrogen", "angels-petrochem-fuel", "e[bob]-d")
 
   OV.disable_technology({ "solid-fuel" })
 

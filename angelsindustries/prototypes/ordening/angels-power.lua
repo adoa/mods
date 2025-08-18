@@ -246,7 +246,7 @@ if mods["bobpower"] then
   end
 
   -- nuclear fuel
-  move_item("plutonium-nucleosynthesis", "angels-power-nuclear-processing", "a[uranium]-z[plutonium-harvest]", "recipe")
+  move_item("bob-plutonium-nucleosynthesis", "angels-power-nuclear-processing", "a[uranium]-z[plutonium-harvest]", "recipe")
 
   -- nuclear reactor
   if settings.startup["bobmods-power-nuclear"].value then
