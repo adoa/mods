@@ -405,7 +405,7 @@ data:extend({
   {
     type = "recipe",
     name = "angels-biter-queen-small-butchering",
-    localised_name = { "item-name.angels-bio-raw-meat" },
+    localised_name = { "recipe-name.angels-butchering", { "item-name.angels-biter-queen-small" }  },
     category = "angels-bio-butchery",
     subgroup = "angels-bio-biter-butchery",
     enabled = false,
@@ -434,7 +434,7 @@ data:extend({
   {
     type = "recipe",
     name = "angels-biter-small-butchering",
-    localised_name = { "item-name.angels-bio-raw-meat" },
+    localised_name = { "recipe-name.angels-butchering", { "item-name.angels-biter-small" }  },
     category = "angels-bio-butchery",
     subgroup = "angels-bio-biter-butchery",
     enabled = false,
@@ -456,7 +456,7 @@ data:extend({
   {
     type = "recipe",
     name = "angels-biter-queen-medium-butchering",
-    localised_name = { "item-name.angels-bio-raw-meat" },
+    localised_name = { "recipe-name.angels-butchering", { "item-name.angels-biter-queen-medium" }  },
     category = "angels-bio-butchery",
     subgroup = "angels-bio-biter-butchery",
     enabled = false,
@@ -485,7 +485,7 @@ data:extend({
   {
     type = "recipe",
     name = "angels-biter-medium-butchering",
-    localised_name = { "item-name.angels-bio-raw-meat" },
+    localised_name = { "recipe-name.angels-butchering", { "item-name.angels-biter-medium" }  },
     category = "angels-bio-butchery",
     subgroup = "angels-bio-biter-butchery",
     enabled = false,
@@ -507,7 +507,7 @@ data:extend({
   {
     type = "recipe",
     name = "angels-biter-queen-big-butchering",
-    localised_name = { "item-name.angels-bio-raw-meat" },
+    localised_name = { "recipe-name.angels-butchering", { "item-name.angels-biter-queen-big" }  },
     category = "angels-bio-butchery",
     subgroup = "angels-bio-biter-butchery",
     enabled = false,
@@ -536,7 +536,7 @@ data:extend({
   {
     type = "recipe",
     name = "angels-biter-big-butchering",
-    localised_name = { "item-name.angels-bio-raw-meat" },
+    localised_name = { "recipe-name.angels-butchering", { "item-name.angels-biter-big" }  },
     category = "angels-bio-butchery",
     subgroup = "angels-bio-biter-butchery",
     enabled = false,

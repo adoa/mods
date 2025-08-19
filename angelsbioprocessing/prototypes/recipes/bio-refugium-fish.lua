@@ -337,7 +337,7 @@ data:extend({
   {
     type = "recipe",
     name = "angels-fish-butchery-0",
-    localised_name = { "item-name.angels-bio-raw-meat" },
+    localised_name = { "recipe-name.angels-butchering", { "item-name.raw-fish" }  },
     category = "angels-bio-butchery",
     subgroup = "angels-bio-fish-butchery",
     enabled = false,
@@ -348,6 +348,7 @@ data:extend({
     results = {
       { type = "item", name = "angels-bio-raw-meat", amount = 1, probability = 0.5 },
     },
+    show_amount_in_title = false,
     icons = angelsmods.functions.create_solid_recipe_icon(
       { "raw-fish" },
       "angels-bio-raw-meat"
@@ -357,7 +358,7 @@ data:extend({
   {
     type = "recipe",
     name = "angels-fish-butchery-1",
-    localised_name = { "item-name.angels-bio-raw-meat" },
+    localised_name = { "recipe-name.angels-butchering", { "item-name.angels-alien-fish-1-raw" }  },
     category = "angels-bio-butchery",
     subgroup = "angels-bio-fish-butchery",
     enabled = false,
@@ -368,6 +369,7 @@ data:extend({
     results = {
       { type = "item", name = "angels-bio-raw-meat", amount = 1 },
     },
+    show_amount_in_title = false,
     icons = angelsmods.functions.create_solid_recipe_icon(
       { "angels-alien-fish-1-raw" },
       "angels-bio-raw-meat"
@@ -377,7 +379,7 @@ data:extend({
   {
     type = "recipe",
     name = "angels-fish-butchery-2",
-    localised_name = { "item-name.angels-bio-raw-meat" },
+    localised_name = { "recipe-name.angels-butchering", { "item-name.angels-alien-fish-2-raw" }  },
     category = "angels-bio-butchery",
     subgroup = "angels-bio-fish-butchery",
     enabled = false,
@@ -388,6 +390,7 @@ data:extend({
     results = {
       { type = "item", name = "angels-bio-raw-meat", amount = 1 },
     },
+    show_amount_in_title = false,
     icons = angelsmods.functions.create_solid_recipe_icon(
       { "angels-alien-fish-2-raw" },
       "angels-bio-raw-meat"
@@ -397,7 +400,7 @@ data:extend({
   {
     type = "recipe",
     name = "angels-fish-butchery-3",
-    localised_name = { "item-name.angels-bio-raw-meat" },
+    localised_name = { "recipe-name.angels-butchering", { "item-name.angels-alien-fish-3-raw" }  },
     category = "angels-bio-butchery",
     subgroup = "angels-bio-fish-butchery",
     enabled = false,
@@ -408,6 +411,7 @@ data:extend({
     results = {
       { type = "item", name = "angels-bio-raw-meat", amount = 2 },
     },
+    show_amount_in_title = false,
     icons = angelsmods.functions.create_solid_recipe_icon(
       { "angels-alien-fish-3-raw" },
       "angels-bio-raw-meat"

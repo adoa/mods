@@ -1208,7 +1208,7 @@ data:extend({
   {
     type = "recipe",
     name = "angels-puffer-butchery-1",
-    localised_name = { "item-name.angels-bio-raw-meat" },
+    localised_name = { "recipe-name.angels-butchering", { "item-name.angels-bio-puffer-1" }  },
     category = "angels-bio-butchery",
     subgroup = "angels-bio-puffer-butchery",
     enabled = false,
@@ -1229,7 +1229,7 @@ data:extend({
   {
     type = "recipe",
     name = "angels-puffer-butchery-2",
-    localised_name = { "item-name.angels-bio-raw-meat" },
+    localised_name = { "recipe-name.angels-butchering", { "item-name.angels-bio-puffer-2" }  },
     category = "angels-bio-butchery",
     subgroup = "angels-bio-puffer-butchery",
     enabled = false,
@@ -1250,7 +1250,7 @@ data:extend({
   {
     type = "recipe",
     name = "angels-puffer-butchery-3",
-    localised_name = { "item-name.angels-bio-raw-meat" },
+    localised_name = { "recipe-name.angels-butchering", { "item-name.angels-bio-puffer-3" }  },
     category = "angels-bio-butchery",
     subgroup = "angels-bio-puffer-butchery",
     enabled = false,
@@ -1271,7 +1271,7 @@ data:extend({
   {
     type = "recipe",
     name = "angels-puffer-butchery-4",
-    localised_name = { "item-name.angels-bio-raw-meat" },
+    localised_name = { "recipe-name.angels-butchering", { "item-name.angels-bio-puffer-4" }  },
     category = "angels-bio-butchery",
     subgroup = "angels-bio-puffer-butchery",
     enabled = false,
@@ -1292,7 +1292,7 @@ data:extend({
   {
     type = "recipe",
     name = "angels-puffer-butchery-5",
-    localised_name = { "item-name.angels-bio-raw-meat" },
+    localised_name = { "recipe-name.angels-butchering", { "item-name.angels-bio-puffer-5" }  },
     category = "angels-bio-butchery",
     subgroup = "angels-bio-puffer-butchery",
     enabled = false,
