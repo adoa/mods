@@ -114,7 +114,6 @@ data:extend({
           shift = { 0, 0 },
           animation_speed = 8,
           max_advance = 0.2,
-          axially_symmetrical = false,
           stripes = {
             {
               filename = "__angelsexplorationgraphics__/graphics/entity/bike/turbo-bike.png",
@@ -153,7 +152,6 @@ data:extend({
     --    },
     --  }
     --},
-    sound_scaling_ratio = 0.005,
     impact_category = "metal",
     working_sound = {
       --activate_sound = {

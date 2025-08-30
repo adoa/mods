@@ -1,8 +1,8 @@
 local sounds = require("__base__.prototypes.entity.sounds")
 
-circuit_connector_definitions["angels-gathering-turret"] = circuit_connector_definitions.create_vector(universal_connector_template, {
-  { variation = 17, main_offset = util.by_pixel(-19.875,  1.75), shadow_offset = util.by_pixel(-19.875,  1.75), show_shadow = true },
-})
+circuit_connector_definitions["angels-gathering-turret"] = circuit_connector_definitions.create_single(universal_connector_template,
+  { variation = 17, main_offset = util.by_pixel(-19.875,  1.75), shadow_offset = util.by_pixel(-19.875,  1.75), show_shadow = true }
+)
 
 -- GATHERING TURRET
 data:extend({
@@ -23,10 +23,8 @@ data:extend({
   {
     type = "container",
     name = "angels-gathering-turret-base",
-
     icon = "__angelsexplorationgraphics__/graphics/icons/gathering-turret.png",
     icon_size = 64,
-
     flags = {
       "placeable-player",
       "not-on-map",
@@ -40,11 +38,9 @@ data:extend({
     },
     minable = { mining_time = 0.1, result = "angels-gathering-turret" },
     max_health = 1000,
-
     collision_box = { { -0.7, -0.7 }, { 0.7, 0.7 } },
     selection_box = { { -1, -1 }, { 1, 1 } },
     selectable_in_game = false, -- select the gatering turret rather than the base
-
     fast_replaceable_group = nil,
     damaged_trigger_effect = {
       type = "create-entity",
@@ -58,17 +54,12 @@ data:extend({
       "ground-unit",
       "angels_gathering_turret_start_collecting_trigger",
     },
-
     open_sound = sounds.machine_open,
     close_sound = sounds.machine_close,
     impact_category = "default",
-
     inventory_size = 1,
-    enable_inventory_bar = false,
-
     picture = angelsmods.functions.create_gathering_turret_base({}),
-
-    circuit_connector_definitions["angels-gathering-turret"],
+    circuit_connector = circuit_connector_definitions["angels-gathering-turret"],
     circuit_wire_max_distance = default_circuit_wire_max_distance,
   },
   {
@@ -251,12 +242,5 @@ data:extend({
         }),
       },
     },
-    light_animations = angelsmods.functions.create_gathering_turret_beam_light({
-      flags = { "trilinear-filtering" },
-      blend_mode = "additive-soft",
-    }),
-    ground_light_animations = angelsmods.functions.create_gathering_turret_beam_ground_light({
-      tint = { 0.05, 0.5, 0.5 },
-    }),
   },
 })
