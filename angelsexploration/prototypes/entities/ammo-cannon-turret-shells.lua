@@ -53,7 +53,6 @@ data:extend({
     flags = {},
     ammo_category = "cannon-shell",
     ammo_type = {
-      category = "cannon-turret",
       action = {
         type = "direct",
         action_delivery = {
@@ -129,7 +128,6 @@ data:extend({
     flags = {},
     ammo_category = "cannon-shell",
     ammo_type = {
-      category = "cannon-turret",
       action = {
         type = "direct",
         action_delivery = {
@@ -205,7 +203,6 @@ data:extend({
     flags = {},
     ammo_category = "cannon-shell",
     ammo_type = {
-      category = "cannon-turret",
       action = {
         type = "direct",
         action_delivery = {

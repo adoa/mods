@@ -600,7 +600,6 @@ data:extend({
       },
       gun_barrel_length = 0.4,
       ammo_type = {
-        category = "bio",
         action = {
           type = "direct",
           action_delivery = {

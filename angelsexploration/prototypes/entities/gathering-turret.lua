@@ -161,7 +161,6 @@ data:extend({
       damage_modifier = 1,
       ammo_category = "beam",
       ammo_type = {
-        category = "gathering",
         energy_consumption = "800kJ",
         action = {
           type = "direct",

@@ -1230,7 +1230,6 @@ local function make_attack_parameter(data_app, data_dmg)
     data_dmg.damage_modifier = nil
     data_dmg.warmup = nil
     data_dmg.ammo = {
-      category = "melee",
       target_type = "entity",
       action = {
         type = "direct",
@@ -1260,7 +1259,6 @@ local function make_attack_parameter(data_app, data_dmg)
     data_dmg.damage_modifier = nil
     data_dmg.warmup = nil
     data_dmg.ammo = {
-      category = "melee",
       target_type = "entity",
       action = {
         type = "direct",
@@ -1292,7 +1290,6 @@ local function make_attack_parameter(data_app, data_dmg)
     data_dmg.slow_seconds = 2
     data_dmg.vehicle_friction_modifier = 1.5
     data_dmg.ammo = {
-      category = "biological",
       action = {
         type = "direct",
         action_delivery = {
@@ -1308,7 +1305,6 @@ local function make_attack_parameter(data_app, data_dmg)
     data_dmg.type = "beam"
     data_dmg.category = "electric"
     data_dmg.ammo = {
-      category = "electric",
       action = {
         type = "direct",
         action_delivery = {

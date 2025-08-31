@@ -258,7 +258,6 @@ data:extend({
     ammo_type = {
       {
         source_type = "default",
-        category = "bio",
         target_type = "position",
         clamp_position = true,
         action = {
