@@ -1,6 +1,9 @@
 local OV = angelsmods.functions.OV
 local move_item = angelsmods.functions.move_item
 
+-- Restore the 1:1 water to steam ratio
+data.raw.fluid["water"].heat_capacity = "0.2kJ"
+
 -------------------------------------------------------------------------------
 -- OIL PROCESSING -------------------------------------------------------------
 -------------------------------------------------------------------------------
