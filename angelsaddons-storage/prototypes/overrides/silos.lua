@@ -1,3 +1,5 @@
+local OV = angelsmods.functions.OV
+
 if angelsmods.addons.storage.icon_scaling then
   if angelsmods.addons.storage.silos or angelsmods.addons.storage.oresilos then
     data.raw["container"]["silo"].scale_info_icons = true
@@ -23,7 +25,7 @@ end
 --OVERRIDE FOR ANGELS
 --REFINING
 if angelsmods.addons.storage.oresilos and angelsmods.refining then
-  angelsmods.functions.OV.add_prereq("ore-silos", "angels-ore-crushing")
+  OV.add_prereq("ore-silos", "angels-ore-crushing")
   for refinery_product_name, ore_name in pairs({
     ["saphirite"] = "ore1",
     ["jivolite"] = "ore2",
@@ -33,7 +35,7 @@ if angelsmods.addons.storage.oresilos and angelsmods.refining then
     ["bobmonium"] = "ore6",
   }) do
     if angelsmods.trigger.refinery_products[refinery_product_name] then
-      angelsmods.functions.OV.patch_recipes({
+      OV.patch_recipes({
         {
           name = "silo-" .. ore_name,
           ingredients = {
@@ -43,10 +45,10 @@ if angelsmods.addons.storage.oresilos and angelsmods.refining then
       })
     else
       angelsmods.functions.hide("silo-" .. ore_name)
-      angelsmods.functions.OV.disable_recipe("silo-" .. ore_name)
+      OV.disable_recipe("silo-" .. ore_name)
     end
   end
-  angelsmods.functions.OV.patch_recipes({
+  OV.patch_recipes({
     {
       name = "silo-coal",
       ingredients = {
@@ -55,9 +57,14 @@ if angelsmods.addons.storage.oresilos and angelsmods.refining then
     },
   })
   if angelsmods.petrochem then
-    angelsmods.functions.OV.add_prereq("ore-silos", "angels-coal-processing")
+    OV.add_prereq("ore-silos", "angels-coal-processing")
   end
-  angelsmods.functions.OV.execute()
+
+  if angelsmods.smelting then
+    OV.remove_prereq("ore-silos", "steel-processing")
+    OV.add_prereq("ore-silos", "angels-steel-smelting-1")
+  end
+  OV.execute()
 end
 
 --OVERRIDE FOR BOBS
