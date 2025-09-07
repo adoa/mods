@@ -1,42 +1,16 @@
-local OV = angelsmods.functions.OV
 local move_item = angelsmods.functions.move_item
-local reorder = function(type, item, subgroup, order)
-  move_item(item, subgroup, order, type)
-end
 
 -------------------------------------------------------------------------------
--- BOB LOGISTIC TAB -----------------------------------------------------------
--------------------------------------------------------------------------------
-if mods["boblogistics"] then
-  data.raw["item-group"]["bob-logistics"].order = "lb[bobs]-a[logistics]"
-  data.raw["item-group"]["bob-logistics"].icon = nil
-  data.raw["item-group"]["bob-logistics"].icon_size = nil
-  data.raw["item-group"]["bob-logistics"].icons = {
-    {
-      icon = "__boblogistics__/graphics/icons/technology/logistics.png",
-      icon_size = 64,
-    },
-    {
-      icon = "__angelsrefininggraphics__/graphics/icons/bobs-logo.png",
-      icon_size = 1080,
-      scale = 64 / 1080 * 0.35,
-      shift = { 20, -20 },
-    },
-  }
-end
-
--------------------------------------------------------------------------------
--- LOGISTIC CHESTS + REPAIR PACKS ---------------------------------------------
+-- LOGISTIC CHESTS ------------------------------------------------------------
 -------------------------------------------------------------------------------
 data:extend({
-  { type = "item-subgroup", name = "angels-chests-small-a", group = "angels-logistics", order = "aa[chests-small]-a" },
-  { type = "item-subgroup", name = "angels-chests-small-b", group = "angels-logistics", order = "aa[chests-small]-b" },
+  { type = "item-subgroup", name = "angels-chests-small-a", group = "logistics", order = "aa[chests-small]-a" },
+  { type = "item-subgroup", name = "angels-chests-small-b", group = "logistics", order = "aa[chests-small]-b" },
 })
--- pre-logistics chests (+ repair packs)
+-- pre-logistics chests
 move_item("wooden-chest", "angels-chests-small-a", "a[chest]-a[wood]")
 move_item("iron-chest", "angels-chests-small-a", "a[chest]-b[iron]")
 move_item("steel-chest", "angels-chests-small-b", "a")
-move_item("repair-pack", "angels-chests-small-a", "b[repair-pack]-a", "repair-tool")
 -- steel chests
 move_item("active-provider-chest", "angels-chests-small-b", "b")
 move_item("passive-provider-chest", "angels-chests-small-b", "c")
@@ -49,21 +23,16 @@ if mods["boblogistics"] then
     {
       type = "item-subgroup",
       name = "angels-chests-small-c",
-      group = "angels-logistics",
+      group = "logistics",
       order = "aa[chests-small]-b",
     },
     {
       type = "item-subgroup",
       name = "angels-chests-small-d",
-      group = "angels-logistics",
+      group = "logistics",
       order = "aa[chests-small]-c",
     },
   })
-  -- repair packs
-  move_item("bob-repair-pack-2", "angels-chests-small-a", "b[repair-pack]-b", "repair-tool")
-  move_item("bob-repair-pack-3", "angels-chests-small-a", "b[repair-pack]-c", "repair-tool")
-  move_item("bob-repair-pack-4", "angels-chests-small-a", "b[repair-pack]-d", "repair-tool")
-  move_item("bob-repair-pack-5", "angels-chests-small-a", "b[repair-pack]-e", "repair-tool")
   -- brass chests
   if mods["bobplates"] then
     move_item("bob-brass-chest", "angels-chests-small-c", "a")
@@ -230,3 +199,8 @@ else
     move_item("bob-laser-robot", "angels-cargo-bots", "c[drone]-d[plasma]")
   end
 end
+
+-------------------------------------------------------------------------------
+-- CIRCUIT NETWORK ------------------------------------------------------------
+-------------------------------------------------------------------------------
+data.raw["item-subgroup"]["circuit-network"].group = "logistics"

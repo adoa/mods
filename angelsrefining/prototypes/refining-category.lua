@@ -189,6 +189,12 @@ data:extend({
   },
   {
     type = "item-subgroup",
+    name = "angels-catalysts-filters",
+    group = "angels-resource-refining",
+    order = "g[catalysts]",
+  },
+  {
+    type = "item-subgroup",
     name = "angels-ore-sorter",
     group = "angels-resource-refining",
     order = "z[building]-a[sorter]",

@@ -60,14 +60,6 @@ if angelsmods.addons.storage.oresilos and angelsmods.refining then
   angelsmods.functions.OV.execute()
 end
 
---INDUSTRIES
-if angelsmods.industries then
-  data.raw["item-subgroup"]["angels-silo"].group = "angels-logistics"
-  data.raw["item-subgroup"]["angels-silo"].order = "ac[chests-silo]"
-  data.raw["item-subgroup"]["angels-ore-silo"].group = "angels-logistics"
-  data.raw["item-subgroup"]["angels-ore-silo"].order = "ac[chests-silo]"
-end
-
 --OVERRIDE FOR BOBS
 if angelsmods.addons.storage.silos then
   --LOGISTICS

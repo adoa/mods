@@ -6,21 +6,6 @@ if mods["bobmodules"] then
   -- EXISTING MODULES CATEGORY ------------------------------------------------
   -----------------------------------------------------------------------------
   -- modules group
-  data.raw["item-group"]["bobmodules"].icon = nil
-  data.raw["item-group"]["bobmodules"].icon_size = nil
-  data.raw["item-group"]["bobmodules"].icons = {
-    {
-      icon = "__base__/graphics/technology/module.png",
-      icon_size = 256,
-      scale = 0.25,
-    },
-    {
-      icon = "__angelsrefininggraphics__/graphics/icons/bobs-logo.png",
-      icon_size = 1080,
-      scale = 64 / 1080 * 0.35,
-      shift = { 20, -20 },
-    },
-  }
   data.raw["item-group"]["bobmodules"].order = "lb[bobs]-d[modules]"
 
   -- modules subgroups

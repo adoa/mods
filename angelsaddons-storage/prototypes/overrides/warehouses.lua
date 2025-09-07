@@ -8,13 +8,6 @@ if angelsmods.addons.storage.warehouses then
     data.raw["logistic-container"]["angels-warehouse-buffer"].scale_info_icons = true
   end
 
-  --OVERRIDE FOR ANGELS
-  --INDUSTRIES
-  if angelsmods.industries then
-    data.raw["item-subgroup"]["angels-warehouse"].group = "angels-logistics"
-    data.raw["item-subgroup"]["angels-warehouse"].order = "ad[chests-warehouse]"
-  end
-
   --OVERRIDE FOR BOBS
   --LOGISTICS
   if mods["boblogistics"] then

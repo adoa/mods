@@ -23,6 +23,9 @@ end
 -------------------------------------------------------------------------------
 data.raw["item-subgroup"]["transport"].group = "angels-vehicles"
 data.raw["item-subgroup"]["transport"].order = "ba[railway]-a[vanilla]"
+data.raw["item-subgroup"]["train-transport"].group = "angels-vehicles"
+data.raw["item-subgroup"]["train-transport"].order = "ba[railway]-b[signals]"
+
 
 if mods["boblogistics"] then
   data.raw["item-subgroup"]["bob-locomotive"].group = "angels-vehicles"
@@ -41,6 +44,7 @@ if mods["boblogistics"] then
     },
   })
   move_item("artillery-wagon", "angels-artillery", "a", "item-with-entity-data")
+  data.raw["item-subgroup"]["train-transport"].order = "ba[railway]-e[signals]"
 else
   move_item("locomotive", "angels-vehicle-train-vanilla", false, "item-with-entity-data")
   move_item("cargo-wagon", "angels-vehicle-train-vanilla", false, "item-with-entity-data")

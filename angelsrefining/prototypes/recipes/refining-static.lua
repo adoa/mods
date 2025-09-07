@@ -961,7 +961,7 @@ data:extend({
     type = "recipe",
     name = "angels-filter-frame",
     category = "crafting",
-    subgroup = "angels-geode-crystallization",
+    subgroup = "angels-catalysts-filters",
     energy_required = 1,
     enabled = false,
     ingredients = {
@@ -979,7 +979,7 @@ data:extend({
     type = "recipe",
     name = "angels-filter-coal",
     category = "crafting",
-    subgroup = "angels-geode-crystallization",
+    subgroup = "angels-catalysts-filters",
     energy_required = 1,
     enabled = false,
     ingredients = {
@@ -997,7 +997,7 @@ data:extend({
     type = "recipe",
     name = "angels-filter-ceramic",
     category = "crafting",
-    subgroup = "angels-geode-crystallization",
+    subgroup = "angels-catalysts-filters",
     energy_required = 1,
     enabled = false,
     ingredients = {
@@ -1016,7 +1016,7 @@ data:extend({
     name = "angels-filter-ceramic-refurbish",
     localised_name = { "item-name.angels-filter-ceramic" },
     category = "crafting-with-fluid",
-    subgroup = "angels-geode-crystallization",
+    subgroup = "angels-catalysts-filters",
     energy_required = 0.5,
     enabled = false,
     ingredients = {
@@ -1464,8 +1464,7 @@ data:extend({
     type = "recipe",
     name = "angels-catalysator-brown",
     category = "angels-crystallizing",
-    subgroup = "angels-geode-crystallization",
-    --subgroup = "angels-slag-processing-1",
+    subgroup = "angels-catalysts-filters",
     energy_required = 0.5,
     enabled = false,
     ingredients = {
@@ -1482,7 +1481,7 @@ data:extend({
     type = "recipe",
     name = "angels-catalysator-green",
     category = "angels-crystallizing-2",
-    subgroup = "angels-geode-crystallization",
+    subgroup = "angels-catalysts-filters",
     energy_required = 0.5,
     enabled = false,
     ingredients = {
@@ -1499,7 +1498,7 @@ data:extend({
     type = "recipe",
     name = "angels-catalysator-orange",
     category = "angels-crystallizing-3",
-    subgroup = "angels-geode-crystallization",
+    subgroup = "angels-catalysts-filters",
     energy_required = 0.5,
     enabled = false,
     ingredients = {
