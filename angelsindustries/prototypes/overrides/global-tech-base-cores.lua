@@ -143,10 +143,10 @@ if angelsmods.industries.tech then
   -- MOBILITY ADDONS
   if mods["angelsaddons-storage"] then
     if angelsmods.addons.storage.pressuretank then
-      OV.set_science_pack("pressure-tanks", "datacore-logistic-1", 2)
+      OV.set_science_pack("angels-pressure-tanks", "datacore-logistic-1", 2)
     end
     if angelsmods.addons.storage.silos or angelsmods.addons.storage.oresilos then
-      AI.core_replace("ore-silos", "processing", "logistic")
+      AI.core_replace("angels-ore-silos", "processing", "logistic")
     end
   end
 
