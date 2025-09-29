@@ -258,7 +258,7 @@ else
     "angels-liquid-rubber",
     "angels-solid-rubber",
     "angels-liquid-styrene",
-    "angels-liquid-ethylbenze",
+    "angels-liquid-ethylbenzene",
     "angels-gas-butadiene",
   })
   angelsmods.functions.hide({
