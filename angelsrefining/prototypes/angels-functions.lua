@@ -1424,7 +1424,9 @@ function angelsmods.functions.hide(entity)
         angelsmods.functions.disable_barreling_recipes(entity)
 
         -- disable bob's voiding recipe
-        angelsmods.functions.OV.disable_recipe("void-" .. entity)
+        if string.sub(entity, 1, 4) == "bob-" then
+          angelsmods.functions.OV.disable_recipe("void-" .. entity)
+        end
         -- ...and angel's voiding recipe(s)
         for _, void_category in pairs({ "water", "chemical" }) do
           angelsmods.functions.OV.disable_recipe("angels-" .. void_category .. "-void-" .. entity)
@@ -1501,8 +1503,8 @@ end
 function angelsmods.functions.disable_barreling_recipes(fluid_to_disable)
   angelsmods.functions.OV.disable_recipe(fluid_to_disable .. "-barrel")
   angelsmods.functions.OV.disable_recipe("empty-" .. fluid_to_disable .. "-barrel")
-  angelsmods.functions.OV.disable_recipe(fluid_to_disable .. "-liquid-bot")
-  angelsmods.functions.OV.disable_recipe("empty-" .. fluid_to_disable .. "-liquid-bot")
+  --angelsmods.functions.OV.disable_recipe(fluid_to_disable .. "-liquid-bot")
+  --angelsmods.functions.OV.disable_recipe("empty-" .. fluid_to_disable .. "-liquid-bot")
   angelsmods.functions.hide(fluid_to_disable .. "-barrel")
 end
 
