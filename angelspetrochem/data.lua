@@ -8,14 +8,8 @@ angelsmods.trigger = angelsmods.trigger or {}
 
 --PETRO PRODUCS
 angelsmods.trigger.plastic = true
-angelsmods.trigger.resin = (not angelsmods.functions.is_special_vanilla()) or (mods["bobelectronics"] and true or false)
-angelsmods.trigger.rubber = (
-  (not angelsmods.functions.is_special_vanilla())
-  or mods["bobelectronics"]
-  or mods["bobplates"]
-)
-    and true
-  or false
+angelsmods.trigger.resin = mods["bobelectronics"] and true or false
+angelsmods.trigger.rubber = mods["bobelectronics"] or mods["bobplates"] and true or false
 angelsmods.trigger.liquid_ferric_chloride_solution = mods["bobelectronics"] and true or false
 angelsmods.trigger.liquid_cupric_chloride_solution = false
 angelsmods.trigger.gas_ammonium_chloride = false
@@ -36,8 +30,7 @@ angelsmods.trigger.disable_vanilla_chemical_plants = mods["bobplates"]
 angelsmods.trigger.enableacids = settings.startup["angels-enable-acids"].value
 angelsmods.trigger.slag = true
 angelsmods.trigger.salt_production = true
-angelsmods.trigger.water_greenyellow_waste = angelsmods.trigger.enableacids
-  or (angelsmods.functions.is_special_vanilla() == false)
+angelsmods.trigger.water_greenyellow_waste = angelsmods.trigger.enableacids or mods["angelssmelting"]
 angelsmods.trigger.water_green_waste = (
   angelsmods.trigger.enableacids or (mods["bobplates"] and data.raw.fluid["bob-deuterium"])
 )
@@ -47,13 +40,7 @@ angelsmods.trigger.water_green_waste = (
 if mods["bobplates"] then
   angelsmods.trigger.ores["fluorite"] = true
 elseif mods["angelsindustries"] then
-  if -- overhaul enabled
-    settings.startup["angels-enable-industries"].value
-    or settings.startup["angels-enable-components"].value
-    or settings.startup["angels-enable-tech"].value
-  then
-    angelsmods.trigger.ores["fluorite"] = true
-  end
+  angelsmods.trigger.ores["fluorite"] = true
 end
 
 --LOAD PROTOTYPES

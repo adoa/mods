@@ -1,38 +1,36 @@
 local move_item = angelsmods.functions.move_item
 
-if angelsmods.industries.overhaul then
-  -----------------------------------------------------------------------------
-  -- VANILLA POWER STUFFS -----------------------------------------------------
-  -----------------------------------------------------------------------------
-  move_item("boiler", "angels-power-steam", "a[boiler]")
-  move_item("steam-engine", "angels-power-steam", "b[steam-engine]")
-  move_item("steam-turbine", "angels-power-steam", "c[steam-turbine]")
+-----------------------------------------------------------------------------
+-- VANILLA POWER STUFFS -----------------------------------------------------
+-----------------------------------------------------------------------------
+move_item("boiler", "angels-power-steam", "a[boiler]")
+move_item("steam-engine", "angels-power-steam", "b[steam-engine]")
+move_item("steam-turbine", "angels-power-steam", "c[steam-turbine]")
 
-  move_item("solar-panel", "angels-power-solar", "a[solar-panel]")
-  move_item("accumulator", "angels-power-solar", "b[accumulator]")
+move_item("solar-panel", "angels-power-solar", "a[solar-panel]")
+move_item("accumulator", "angels-power-solar", "b[accumulator]")
 
-  move_item("nuclear-reactor", "angels-power-nuclear", "a[reactor]")
-  move_item("heat-pipe", "angels-power-nuclear", "b[heat-pipe]")
-  move_item("heat-exchanger", "angels-power-nuclear", "c[heat-exchanger]")
+move_item("nuclear-reactor", "angels-power-nuclear", "a[reactor]")
+move_item("heat-pipe", "angels-power-nuclear", "b[heat-pipe]")
+move_item("heat-exchanger", "angels-power-nuclear", "c[heat-exchanger]")
 
-  move_item("uranium-235", "angels-power-nuclear-processing", "a[radioactive-element]-b[uranium-235]")
-  move_item("uranium-238", "angels-power-nuclear-processing", "a[radioactive-element]-c[uranium-238]")
-  move_item("uranium-processing", "angels-power-nuclear-processing", "a[uranium]-a[processing]", "recipe")
-  move_item("kovarex-enrichment-process", "angels-power-nuclear-processing", "a[uranium]-b[enrichment]", "recipe")
+move_item("uranium-235", "angels-power-nuclear-processing", "a[radioactive-element]-b[uranium-235]")
+move_item("uranium-238", "angels-power-nuclear-processing", "a[radioactive-element]-c[uranium-238]")
+move_item("uranium-processing", "angels-power-nuclear-processing", "a[uranium]-a[processing]", "recipe")
+move_item("kovarex-enrichment-process", "angels-power-nuclear-processing", "a[uranium]-b[enrichment]", "recipe")
 
-  move_item("uranium-fuel-cell", "angels-power-nuclear-fuel-cell", "a[uranium]-b")
-  move_item("depleted-uranium-fuel-cell", "angels-power-nuclear-fuel-cell", "a[uranium]-c")
-  move_item("uranium-fuel-cell", "angels-power-nuclear-fuel-cell", "a[uranium]-a", "recipe")
-  move_item("nuclear-fuel-reprocessing", "angels-power-nuclear-fuel-cell", "a[uranium]-c", "recipe")
+move_item("uranium-fuel-cell", "angels-power-nuclear-fuel-cell", "a[uranium]-b")
+move_item("depleted-uranium-fuel-cell", "angels-power-nuclear-fuel-cell", "a[uranium]-c")
+move_item("uranium-fuel-cell", "angels-power-nuclear-fuel-cell", "a[uranium]-a", "recipe")
+move_item("nuclear-fuel-reprocessing", "angels-power-nuclear-fuel-cell", "a[uranium]-c", "recipe")
 
-  move_item("small-electric-pole", "angels-power-poles", "a[small]")
-  move_item("medium-electric-pole", "angels-power-poles", "b[medium]")
-  move_item("big-electric-pole", "angels-power-poles", "c[big]")
-  move_item("substation", "angels-power-poles", "d[substation]")
+move_item("small-electric-pole", "angels-power-poles", "a[small]")
+move_item("medium-electric-pole", "angels-power-poles", "b[medium]")
+move_item("big-electric-pole", "angels-power-poles", "c[big]")
+move_item("substation", "angels-power-poles", "d[substation]")
 
-  if mods["bobplates"] then
-    move_item("bob-thorium-232", "angels-power-nuclear-processing", "a[radioactive-element]-h[thorium-232]")
-  end
+if mods["bobplates"] then
+  move_item("bob-thorium-232", "angels-power-nuclear-processing", "a[radioactive-element]-h[thorium-232]")
 end
 
 if mods["bobpower"] then
