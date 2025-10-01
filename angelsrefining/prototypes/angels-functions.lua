@@ -1424,9 +1424,8 @@ function angelsmods.functions.hide(entity)
         angelsmods.functions.disable_barreling_recipes(entity)
 
         -- disable bob's voiding recipe
-        if string.sub(entity, 1, 4) == "bob-" then
-          angelsmods.functions.OV.disable_recipe("void-" .. entity)
-        end
+        angelsmods.functions.OV.disable_recipe("void-" .. entity)
+
         -- ...and angel's voiding recipe(s)
         for _, void_category in pairs({ "water", "chemical" }) do
           angelsmods.functions.OV.disable_recipe("angels-" .. void_category .. "-void-" .. entity)
@@ -1740,18 +1739,8 @@ function angelsmods.functions.ore_exists(ore_name)
   return data.raw.item[ore_name] and true or false
 end
 
-local is_vanilla_ore = {
-  ["iron"] = true,
-  ["copper"] = true,
-  ["uranium"] = true,
-}
 function angelsmods.functions.is_special_vanilla()
-  for ore_name, ore_enabled in pairs(angelsmods.trigger.ores or {}) do
-    if ore_enabled and not is_vanilla_ore[ore_name] then
-      return false
-    end
-  end
-  return true
+  return (not mods["angelssmelting"]) and (not mods["bobplates"]) and true or false
 end
 
 function angelsmods.functions.get_trigger_names()
