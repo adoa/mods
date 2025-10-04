@@ -16,10 +16,8 @@ angelsmods.trigger.ores["nickel"] = true
 angelsmods.trigger.ores["silicon"] = true
 angelsmods.trigger.ores["silver"] = true
 angelsmods.trigger.ores["tin"] = true
-angelsmods.trigger.ores["thorium"] = true
 angelsmods.trigger.ores["titanium"] = true
 angelsmods.trigger.ores["tungsten"] = true
-angelsmods.trigger.ores["uranium"] = true
 angelsmods.trigger.ores["zinc"] = true
 
 --SMELTING TRIGGERS

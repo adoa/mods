@@ -8,35 +8,42 @@ if mods["bobmodules"] then
   -- modules group
   data.raw["item-group"]["bobmodules"].order = "lb[bobs]-d[modules]"
 
-  -- modules subgroups
-  data.raw["item-subgroup"]["module-intermediates"].order = "f-0-a"
-  data:extend({
-    {
-      type = "item-subgroup",
-      name = "module-intermediates-2",
-      group = "bobmodules",
-      order = "f-0-b",
-    },
-    {
-      type = "item-subgroup",
-      name = "module-intermediates-3",
-      group = "bobmodules",
-      order = "f-0-c",
-    },
-  })
-  data.raw["item"]["bob-module-contact"].subgroup = "module-intermediates-2"
-  data.raw["item"]["bob-module-processor-board-2"].subgroup = "module-intermediates-2"
-  data.raw["item"]["bob-module-processor-board-3"].subgroup = "module-intermediates-3"
-  data.raw["item"]["bob-speed-processor-2"].subgroup = "module-intermediates-2"
-  data.raw["item"]["bob-speed-processor-3"].subgroup = "module-intermediates-3"
-  data.raw["item"]["bob-efficiency-processor-2"].subgroup = "module-intermediates-2"
-  data.raw["item"]["bob-efficiency-processor-3"].subgroup = "module-intermediates-3"
-  data.raw["item"]["bob-productivity-processor-2"].subgroup = "module-intermediates-2"
-  data.raw["item"]["bob-productivity-processor-3"].subgroup = "module-intermediates-3"
-  data.raw["item"]["bob-pollution-clean-processor-2"].subgroup = "module-intermediates-2"
-  data.raw["item"]["bob-pollution-clean-processor-3"].subgroup = "module-intermediates-3"
-  data.raw["item"]["bob-pollution-create-processor-2"].subgroup = "module-intermediates-2"
-  data.raw["item"]["bob-pollution-create-processor-3"].subgroup = "module-intermediates-3"
+  -- TODO: Move this section to Bob's Modules mod
+  --
+      -- modules subgroups
+      data.raw["item-subgroup"]["module-intermediates"].order = "f-0-a"
+      data:extend({
+        {
+          type = "item-subgroup",
+          name = "module-intermediates-2",
+          group = "bobmodules",
+          order = "f-0-b",
+        },
+        {
+          type = "item-subgroup",
+          name = "module-intermediates-3",
+          group = "bobmodules",
+          order = "f-0-c",
+        },
+      })
+      data.raw["item"]["bob-module-processor-board"].order = "c"
+      data.raw["item"]["bob-module-processor-board"].subgroup = "module-intermediates"
+      data.raw["item"]["bob-module-case"].subgroup = "module-intermediates"
+      data.raw["item"]["bob-module-contact"].subgroup = "module-intermediates"
+      data.raw["item"]["bob-module-circuit-board"].subgroup = "module-intermediates"
+      data.raw["item"]["bob-module-processor-board-2"].subgroup = "module-intermediates-2"
+      data.raw["item"]["bob-module-processor-board-3"].subgroup = "module-intermediates-3"
+      data.raw["item"]["bob-speed-processor-2"].subgroup = "module-intermediates-2"
+      data.raw["item"]["bob-speed-processor-3"].subgroup = "module-intermediates-3"
+      data.raw["item"]["bob-efficiency-processor-2"].subgroup = "module-intermediates-2"
+      data.raw["item"]["bob-efficiency-processor-3"].subgroup = "module-intermediates-3"
+      data.raw["item"]["bob-productivity-processor-2"].subgroup = "module-intermediates-2"
+      data.raw["item"]["bob-productivity-processor-3"].subgroup = "module-intermediates-3"
+      data.raw["item"]["bob-pollution-clean-processor-2"].subgroup = "module-intermediates-2"
+      data.raw["item"]["bob-pollution-clean-processor-3"].subgroup = "module-intermediates-3"
+      data.raw["item"]["bob-pollution-create-processor-2"].subgroup = "module-intermediates-2"
+      data.raw["item"]["bob-pollution-create-processor-3"].subgroup = "module-intermediates-3"
+  -- END TODO
 
   -----------------------------------------------------------------------------
   -- EXISTING MODULES RECIPES -------------------------------------------------

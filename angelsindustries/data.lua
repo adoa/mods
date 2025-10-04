@@ -149,15 +149,3 @@ require("prototypes.recipes.vehicles-recipe")
 --TECHS
 require("prototypes.technology.vequip-technology")
 require("prototypes.technology.logistics-technology")
-
--- NUCLEAR -----------------------------------------------------------
---ENTITIES
-require("prototypes.buildings.centrifuge")
-require("prototypes.buildings.angels-reactor")
---ITEMS
-require("prototypes.items.overhaul-nuclear-power")
-require("prototypes.items.angels-reactor")
---RECIPES
-require("prototypes.recipes.overhaul-nuclear-power")
---TECHS
-require("prototypes.technology.overhaul-nuclear-power")

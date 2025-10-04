@@ -79,7 +79,7 @@ angelsmods.trigger.smelting_products["copper"].wire = true
 --glass
 angelsmods.trigger.smelting_products["glass"].plate = mods["bobplates"] and true or false
 angelsmods.trigger.smelting_products["glass"].fibre = false
-angelsmods.trigger.smelting_products["glass"].board = mods["bobelectronics"] and true or false
+angelsmods.trigger.smelting_products["glass"].board = mods["bobplates"] and mods["bobelectronics"] and true or false
 --gold
 angelsmods.trigger.smelting_products["gold"].plate = mods["bobplates"] and true or false
 angelsmods.trigger.smelting_products["gold"].wire = angelsmods.trigger.smelting_products["gold"].plate
@@ -149,7 +149,6 @@ require("prototypes.items.angels-silicon")
 require("prototypes.items.angels-silver")
 require("prototypes.items.angels-stone")
 require("prototypes.items.angels-support")
-require("prototypes.items.angels-thorium")
 require("prototypes.items.angels-tin")
 require("prototypes.items.angels-titanium")
 require("prototypes.items.angels-tungsten")

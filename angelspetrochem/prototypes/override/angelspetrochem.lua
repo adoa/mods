@@ -44,15 +44,6 @@ if mods["bobplates"] and data.raw["fluid"]["bob-deuterium"] then
       },
     })
   end
-  
-  if mods["bobrevamp"] and mods["bobpower"] and settings.startup["bobmods-revamp-nuclear"].value == true then
-    -- deuterium-fuel-cell will be unlocked by bob-nuclear-power-3
-  else
-    OV.add_unlock("angels-water-chemistry-2", "bob-deuterium-fuel-cell")
-  end
-
-  OV.set_science_pack("bob-deuterium-fuel-reprocessing", "utility-science-pack", 1)
-  OV.set_science_pack("bob-deuterium-fuel-cell-2", "utility-science-pack", 1)
 else
   angelsmods.trigger.water_green_waste = true
 end
