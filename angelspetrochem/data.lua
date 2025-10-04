@@ -28,6 +28,8 @@ angelsmods.trigger.disable_vanilla_chemical_plants = mods["bobplates"]
 
 --OVERRIDE FOR REFINING
 angelsmods.trigger.enableacids = settings.startup["angels-enable-acids"].value
+angelsmods.trigger.ores["thorium"] = true
+angelsmods.trigger.ores["uranium"] = true
 angelsmods.trigger.slag = true
 angelsmods.trigger.salt_production = true
 angelsmods.trigger.water_greenyellow_waste = angelsmods.trigger.enableacids or mods["angelssmelting"]
@@ -62,6 +64,8 @@ require("prototypes.buildings.flare-stack")
 require("prototypes.buildings.electric-boiler")
 require("prototypes.buildings.valves")
 require("prototypes.buildings.storage-tanks")
+require("prototypes.buildings.nuclear-reactor")
+require("prototypes.buildings.centrifuge")
 
 require("prototypes.items.petrochem-basics")
 require("prototypes.items.petrochem-carbons")
@@ -70,6 +74,7 @@ require("prototypes.items.petrochem-nitrogen")
 require("prototypes.items.petrochem-raws")
 require("prototypes.items.petrochem-solids")
 require("prototypes.items.petrochem-sulfur")
+require("prototypes.items.petrochem-nuclear")
 
 require("prototypes.recipes.petrochem-basics")
 require("prototypes.recipes.petrochem-carbons")
@@ -79,9 +84,11 @@ require("prototypes.recipes.petrochem-sodium")
 require("prototypes.recipes.petrochem-sulfur")
 require("prototypes.recipes.petrochem-chlorine")
 require("prototypes.recipes.petrochem-entity")
+require("prototypes.recipes.petrochem-nuclear")
 
 require("prototypes.technology.petrochem-basics")
 require("prototypes.technology.petrochem-basic-chemistry")
+require("prototypes.technology.petrochem-nuclear")
 require("prototypes.technology.petrochem-petro-chemistry")
 require("prototypes.technology.petrochem-solids")
 require("prototypes.technology.petrochem-weaponary")

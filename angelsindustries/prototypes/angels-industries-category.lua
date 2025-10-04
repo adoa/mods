@@ -1,13 +1,4 @@
 data:extend({
-  -- centrifuging category part of base game
-  {
-    type = "recipe-category",
-    name = "centrifuging-2",
-  },
-  {
-    type = "recipe-category",
-    name = "centrifuging-3",
-  },
   --EQUIPMENT CATEGORY
   {
     type = "equipment-category",

@@ -3,9 +3,19 @@ local sounds = require("__base__.prototypes.entity.sounds")
 
 data:extend({
   {
+    type = "item",
+    name = "angels-burner-reactor",
+    icon = "__angelspetrochemgraphics__/graphics/icons/fast-reactor-icon.png",
+    icon_size = 64,
+    subgroup = "angels-power-nuclear",
+    order = "a[reactor]-b",
+    place_result = "angels-burner-reactor",
+    stack_size = 10,
+  },
+  {
     type = "reactor",
     name = "angels-burner-reactor",
-    icon = "__angelsindustriesgraphics__/graphics/icons/fast-reactor-icon.png",
+    icon = "__angelspetrochemgraphics__/graphics/icons/fast-reactor-icon.png",
     icon_size = 64,
     flags = { "placeable-neutral", "player-creation" },
     minable = { mining_time = 0.5, result = "angels-burner-reactor" },
@@ -39,14 +49,14 @@ data:extend({
     picture = {
       layers = {
         {
-          filename = "__angelsindustriesgraphics__/graphics/entity/fast-reactor/fast-reactor.png",
+          filename = "__angelspetrochemgraphics__/graphics/entity/fast-reactor/fast-reactor.png",
           width = 608,
           height = 638,
           shift = util.by_pixel(3, -0.5),
           scale = 0.5,
         },
         {
-          filename = "__angelsindustriesgraphics__/graphics/entity/fast-reactor/fast-reactor-shadow.png",
+          filename = "__angelspetrochemgraphics__/graphics/entity/fast-reactor/fast-reactor-shadow.png",
           width = 610,
           height = 586,
           scale = 0.5,
@@ -57,7 +67,7 @@ data:extend({
     },
 
     working_light_picture = {
-      filename = "__angelsindustriesgraphics__/graphics/entity/fast-reactor/fast-reactor-lights.png",
+      filename = "__angelspetrochemgraphics__/graphics/entity/fast-reactor/fast-reactor-lights.png",
       blend_mode = "additive",
       draw_as_glow = true,
       width = 608,
@@ -95,7 +105,7 @@ data:extend({
       },
 
       heat_picture = apply_heat_pipe_glow({
-        filename = "__angelsindustriesgraphics__/graphics/entity/fast-reactor/fast-reactor-heated.png",
+        filename = "__angelspetrochemgraphics__/graphics/entity/fast-reactor/fast-reactor-heated.png",
         width = 608,
         height = 638,
         shift = util.by_pixel(3, -0.5),
@@ -105,7 +115,7 @@ data:extend({
 
     connection_patches_connected = {
       sheet = {
-        filename = "__angelsindustriesgraphics__/graphics/entity/fast-reactor/fast-reactor-connect-patches.png",
+        filename = "__angelspetrochemgraphics__/graphics/entity/fast-reactor/fast-reactor-connect-patches.png",
         width = 82,
         height = 82,
         variation_count = 16,
@@ -115,7 +125,7 @@ data:extend({
 
     connection_patches_disconnected = {
       sheet = {
-        filename = "__angelsindustriesgraphics__/graphics/entity/fast-reactor/fast-reactor-connect-patches.png",
+        filename = "__angelspetrochemgraphics__/graphics/entity/fast-reactor/fast-reactor-connect-patches.png",
         width = 82,
         height = 82,
         variation_count = 16,
@@ -126,7 +136,7 @@ data:extend({
 
     heat_connection_patches_connected = {
       sheet = apply_heat_pipe_glow({
-        filename = "__angelsindustriesgraphics__/graphics/entity/fast-reactor/fast-reactor-connect-patches-heated.png",
+        filename = "__angelspetrochemgraphics__/graphics/entity/fast-reactor/fast-reactor-connect-patches-heated.png",
         width = 64,
         height = 64,
         variation_count = 16,
@@ -136,7 +146,7 @@ data:extend({
 
     heat_connection_patches_disconnected = {
       sheet = apply_heat_pipe_glow({
-        filename = "__angelsindustriesgraphics__/graphics/entity/fast-reactor/fast-reactor-connect-patches-heated.png",
+        filename = "__angelspetrochemgraphics__/graphics/entity/fast-reactor/fast-reactor-connect-patches-heated.png",
         width = 64,
         height = 64,
         variation_count = 16,

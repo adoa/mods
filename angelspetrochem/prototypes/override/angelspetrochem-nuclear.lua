@@ -32,7 +32,7 @@ OV.patch_recipes({
     icons = angelsmods.functions.add_number_icon_layer(
       angelsmods.functions.get_object_icons("atomic-bomb"),
       1,
-      angelsmods.industries.number_tint
+      angelsmods.petrochem.number_tint
     ),
   },
   {
@@ -73,24 +73,24 @@ OV.patch_recipes({
     },
     icons = {
       { -- need to have something as bottom layer
-        icon = "__angelsindustriesgraphics__/graphics/icons/reprocessing_arrow.png",
+        icon = "__angelspetrochemgraphics__/graphics/icons/reprocessing_arrow.png",
         icon_size = 64,
         scale = 32 / 64,
       },
       {
-        icon = "__angelsindustriesgraphics__/graphics/icons/used-up-uranium-fuel-cell.png",
+        icon = "__angelspetrochemgraphics__/graphics/icons/used-up-uranium-fuel-cell.png",
         icon_size = 64,
         scale = 32 / 64 * 45 / 64,
         shift = { -7, -5 },
       },
       {
-        icon = "__angelsindustriesgraphics__/graphics/icons/uranium-238.png",
+        icon = "__angelspetrochemgraphics__/graphics/icons/uranium-238.png",
         icon_size = 64,
         scale = 32 / 64 * 2 / 3,
         shift = { 5, 7 },
       },
       {
-        icon = "__angelsindustriesgraphics__/graphics/icons/reprocessing_arrow.png",
+        icon = "__angelspetrochemgraphics__/graphics/icons/reprocessing_arrow.png",
         icon_size = 64,
         scale = 32 / 64,
       },
@@ -123,23 +123,59 @@ OV.add_unlock("angels-nuclear-fuel", "angels-nuclear-fuel")
 OV.add_unlock("angels-nuclear-fuel", "angels-nuclear-fuel-2")
 
 -------------------------------------------------------------------------------
--- Angels nuclear addaption
+-- Angels nuclear adaption
 -------------------------------------------------------------------------------
-if not angelsmods.industries.components then
+if mods["bobplates"] then
+  OV.patch_recipes({
+    {
+      name = "angels-mixed-oxide-cell",
+      ingredients = {
+        { type = "item", name = "bob-lead-plate", amount = "iron-plate" },
+      },
+    },
+    {
+      name = "angels-americium-regeneration",
+      results = {
+        { type = "item", name = "bob-lead-oxide", amount = 5, ignored_by_productivity = 5 }, -- equals 5 lead plates
+      },
+    },
+    {
+      name = "angels-thorium-fuel-cell",
+      ingredients = {
+        { type = "item", name = "bob-zinc-plate", amount = "steel-plate" },
+      },
+    },
+    {
+      name = "angels-deuterium-fuel-cell",
+      ingredients = {
+        { type = "item", name = "bob-zinc-plate", amount = "steel-plate" },
+      }
+    },
+  })
+  if mods["angelssmelting"] then
+    OV.add_prereq("angels-thorium-power", "angels-zinc-smelting-1")
+  else
+    OV.add_prereq("angels-thorium-power", "bob-zinc-processing")
+  end
+elseif mods["angelssmelting"] then
+
+end
+
+if not mods["angelsindustries"] or not angelsmods.industries.components then
   -- Disable infinite power from muon catalysts as there is no sink for the catalysts
   OV.disable_recipe({ "angels-advanced-deuterium-fuel-cell-reprocessing" })
   OV.disable_technology({ "angels-fusion-power-2" })
 end
 
 -------------------------------------------------------------------------------
--- Bob nuclear addaption
+-- Bob nuclear adaption
 -------------------------------------------------------------------------------
 if mods["bobassembly"] and data.raw["assembling-machine"]["bob-centrifuge-2"] then
   OV.add_prereq("angels-plutonium-power", "bob-centrifuge-2")
 else
   OV.add_prereq("angels-plutonium-power", "production-science-pack")
 end
-if mods["bobassembly"] and data.raw["assembling-machine"]["centrifuge-3"] then
+if mods["bobassembly"] and data.raw["assembling-machine"]["bob-centrifuge-3"] then
   OV.remove_prereq("angels-thorium-power", "utility-science-pack")
   OV.add_prereq("angels-thorium-power", "bob-centrifuge-3")
 end
@@ -209,19 +245,23 @@ if mods["bobplates"] then
 
   -- thorium processing
   -- use bobs thorium
+  
   if data.raw.item["bob-thorium-ore"] then
+    OV.global_replace_item("angels-thorium-ore", "bob-thorium-ore")
+    angelsmods.functions.hide("angels-thorium-ore")
+    angelsmods.functions.move_item("bob-thorium-ore", "angels-ores", "i[thorium-ore]")
     data.raw.item["bob-thorium-ore"].icon = data.raw.item["angels-thorium-ore"].icon
     data.raw.item["bob-thorium-ore"].icon_size = data.raw.item["angels-thorium-ore"].icon_size
     data.raw.item["bob-thorium-ore"].icons = data.raw.item["angels-thorium-ore"].icons
   end
   
-  if data.raw.item["bob-plutonium-239"] then
+  if data.raw.item["bob-thorium-232"] then
     OV.global_replace_item("angels-thorium-232", "bob-thorium-232")
     data.raw.item["bob-thorium-232"].icon = data.raw.item["angels-thorium-232"].icon
     data.raw.item["bob-thorium-232"].icon_size = data.raw.item["angels-thorium-232"].icon_size
     data.raw.item["bob-thorium-232"].icons = data.raw.item["angels-thorium-232"].icons
+    angelsmods.functions.hide("angels-thorium-232")
   end
-  angelsmods.functions.hide("angels-thorium-232")
   
   OV.disable_recipe("bob-thorium-processing")
   OV.global_replace_technology("bob-thorium-processing", "angels-thorium-power")
@@ -276,12 +316,9 @@ if mods["bobplates"] then
       end
     end
 
-    if data.raw.item["bob-deuterium-fuel-cell"] then
-      OV.disable_recipe("bob-deuterium-fuel-cell")
-      if data.raw.reactor["bob-nuclear-reactor-3"] then
-        data.raw.item["angels-deuterium-fuel-cell"].fuel_category = "bob-deuterium"
-        OV.add_prereq("bob-nuclear-power-3", "angels-fusion-power-1")
-      end
+    if data.raw.reactor["bob-nuclear-reactor-3"] then
+      data.raw.item["angels-deuterium-fuel-cell"].fuel_category = "bob-deuterium"
+      OV.add_prereq("bob-nuclear-power-3", "angels-fusion-power-1")
     end
   else --remove them from their individual techs
     OV.disable_recipe({ "bob-plutonium-fuel-cell", "bob-thorium-processing" })
