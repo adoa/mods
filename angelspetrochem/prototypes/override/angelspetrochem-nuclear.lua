@@ -102,7 +102,30 @@ data.raw.recipe["nuclear-fuel-reprocessing"].icon = nil
 OV.disable_recipe("kovarex-enrichment-process")
 OV.add_unlock("nuclear-power", "angels-uranium-fuel-cell")
 data.raw.item["uranium-fuel-cell"].fuel_value = "2GJ"
-data.raw.technology["kovarex-enrichment-process"].unit.count = 10 --down from 1500 (Considering empty)
+data.raw.technology["kovarex-enrichment-process"].unit.count = 10 -- down from 1500 (Considering empty)
+
+-----------------------------------------------------------------------------
+-- VANILLA POWER STUFFS -----------------------------------------------------
+-----------------------------------------------------------------------------
+local move_item = angelsmods.functions.move_item
+
+move_item("nuclear-reactor", "angels-power-nuclear", "a[reactor]")
+move_item("heat-pipe", "angels-power-nuclear", "b[heat-pipe]")
+move_item("heat-exchanger", "angels-power-nuclear", "c[heat-exchanger]")
+
+move_item("uranium-235", "angels-power-nuclear-processing", "a[radioactive-element]-b[uranium-235]")
+move_item("uranium-238", "angels-power-nuclear-processing", "a[radioactive-element]-c[uranium-238]")
+move_item("uranium-processing", "angels-power-nuclear-processing", "a[uranium]-a[processing]", "recipe")
+move_item("kovarex-enrichment-process", "angels-power-nuclear-processing", "a[uranium]-b[enrichment]", "recipe")
+
+move_item("uranium-fuel-cell", "angels-power-nuclear-fuel-cell", "a[uranium]-b")
+move_item("depleted-uranium-fuel-cell", "angels-power-nuclear-fuel-cell", "a[uranium]-c")
+move_item("uranium-fuel-cell", "angels-power-nuclear-fuel-cell", "a[uranium]-a", "recipe")
+move_item("nuclear-fuel-reprocessing", "angels-power-nuclear-fuel-cell", "a[uranium]-c", "recipe")
+
+if mods["bobplates"] then
+  move_item("bob-thorium-232", "angels-power-nuclear-processing", "a[radioactive-element]-h[thorium-232]")
+end
 
 -------------------------------------------------------------------------------
 -- Productivity
@@ -336,5 +359,90 @@ if mods["bobplates"] then
         },
       },
     })
+  end
+end
+
+if mods["bobpower"] then
+  -----------------------------------------------------------------------------
+  -- BOB NUCLEAR POWER --------------------------------------------------------
+  -----------------------------------------------------------------------------
+  -- burner reactor
+  if settings.startup["bobmods-power-heatsources"].value then
+    data:extend({
+      {
+        type = "item-subgroup",
+        name = "angels-power-nuclear-reactor-a",
+        group = "production",
+        order = "c[nuclear]-b[angels-burner-reactor]",
+      },
+    })
+
+    move_item("bob-burner-reactor", "angels-power-nuclear-reactor-a", "a[fuel-burner]-a")
+    move_item("bob-burner-reactor-2", "angels-power-nuclear-reactor-a", "a[fuel-burner]-b")
+
+    move_item("bob-fluid-reactor", "angels-power-nuclear-reactor-a", "b[fluid-burner]-a")
+    move_item("bob-fluid-reactor-2", "angels-power-nuclear-reactor-a", "b[fluid-burner]-b")
+  end
+
+  -- nuclear fuel
+  move_item("bob-plutonium-nucleosynthesis", "angels-power-nuclear-processing", "a[uranium]-z[plutonium-harvest]", "recipe")
+
+  -- nuclear reactor
+  if settings.startup["bobmods-power-nuclear"].value then
+    data:extend({
+      {
+        type = "item-subgroup",
+        name = "angels-power-nuclear-reactor-b",
+        group = "production",
+        order = "c[nuclear]-c[nuclear-reactor]",
+      },
+    })
+
+    move_item("nuclear-reactor", "angels-power-nuclear-reactor-b", "a")
+    move_item("bob-nuclear-reactor-2", "angels-power-nuclear-reactor-b", "b")
+    move_item("bob-nuclear-reactor-3", "angels-power-nuclear-reactor-b", "c")
+  end
+
+  -- heat pipes
+  if
+    settings.startup["bobmods-power-steam"].value
+    or settings.startup["bobmods-power-nuclear"].value
+    or settings.startup["bobmods-power-heatsources"].value
+  then
+    data:extend({
+      {
+        type = "item-subgroup",
+        name = "angels-power-nuclear-heat-pipe",
+        group = "production",
+        order = "c[nuclear]-d[heat-pipe]",
+      },
+    })
+
+    move_item("heat-pipe", "angels-power-nuclear-heat-pipe", "a")
+    move_item("bob-heat-pipe-2", "angels-power-nuclear-heat-pipe", "b")
+    move_item("bob-heat-pipe-3", "angels-power-nuclear-heat-pipe", "c")
+    move_item("bob-heat-pipe-4", "angels-power-nuclear-heat-pipe", "d")
+  end
+
+  -- heat exchanger
+  if settings.startup["bobmods-power-steam"].value == true then
+    data:extend({
+      {
+        type = "item-subgroup",
+        name = "angels-power-nuclear-heat-exchanger",
+        group = "production",
+        order = "c[nuclear]-e[heat-exchanger]",
+      },
+    })
+
+    move_item("heat-exchanger", "angels-power-nuclear-heat-exchanger", "a")
+    move_item("bob-heat-exchanger-2", "angels-power-nuclear-heat-exchanger", "b")
+    move_item("bob-heat-exchanger-3", "angels-power-nuclear-heat-exchanger", "c")
+    move_item("bob-heat-exchanger-4", "angels-power-nuclear-heat-exchanger", "d")
+
+    move_item("heat-exchanger", "angels-power-nuclear-heat-exchanger", "aa", "recipe")
+    move_item("bob-heat-exchanger-2", "angels-power-nuclear-heat-exchanger", "ba", "recipe")
+    move_item("bob-heat-exchanger-3", "angels-power-nuclear-heat-exchanger", "ca", "recipe")
+    move_item("bob-heat-exchanger-4", "angels-power-nuclear-heat-exchanger", "da", "recipe")
   end
 end
