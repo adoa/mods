@@ -190,6 +190,10 @@ if not mods["angelsindustries"] or not angelsmods.industries.components then
   OV.disable_technology({ "angels-fusion-power-2" })
 end
 
+if angelsmods.functions.is_special_vanilla() then
+  OV.remove_prereq("angels-thorium-power", "angels-ore-electro-whinning-cell")
+end
+
 -------------------------------------------------------------------------------
 -- Bob nuclear adaption
 -------------------------------------------------------------------------------
