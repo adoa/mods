@@ -50,6 +50,11 @@ OV.remove_prereq("lubricant", "oil-processing")
 OV.remove_prereq("lubricant", "chemical-plant")
 OV.add_prereq("lubricant", "angels-steam-cracking-1")
 
+OV.add_prereq("oil-gathering", "angels-basic-chemistry-3")
+OV.add_unlock("oil-gathering", "angels-separator")
+OV.add_unlock("oil-gathering", "angels-gas-separation")
+OV.add_unlock("oil-gathering", "angels-oil-separation")
+
 -------------------------------------------------------------------------------
 -- PLASTICS -------------------------------------------------------------------
 -------------------------------------------------------------------------------
