@@ -15,7 +15,7 @@ simulations.factoriopedia_cargo_robot =
     [[
         game.simulation.camera_position = {0, -1}
         game.surfaces[1].create_entity{
-            name = "cargo-robot",
+            name = "angels-cargo-robot",
             position = {0, 0},
         }
     ]]
@@ -27,7 +27,7 @@ simulations.factoriopedia_cargo_robot_2 =
     [[
         game.simulation.camera_position = {0, -1}
         game.surfaces[1].create_entity{
-            name = "cargo-robot-2",
+            name = "angels-cargo-robot-2",
             position = {0, 0},
         }
     ]]

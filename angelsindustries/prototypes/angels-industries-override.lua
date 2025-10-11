@@ -1,9 +1,5 @@
 local OV = angelsmods.functions.OV
 
-OV.add_unlock("lamp", "angels-lamp")
-
-OV.execute()
-
 --UPDATE RECIPES FOR ENTITIES
 require("prototypes.overrides.components-entity-update")
 
