@@ -163,7 +163,7 @@ data:extend({
     energy_usage = "200kW",
     -- per one charge slot
     charging_energy = "200kW",
-    logistics_radius = 6.5,
+    logistics_radius = 7.5,
     construction_radius = 0,
     charge_approach_distance = 6,
     robot_slots_count = 7,
