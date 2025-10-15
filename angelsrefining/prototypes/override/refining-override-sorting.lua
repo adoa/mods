@@ -380,49 +380,6 @@ local function create_sorting_mix_recipe(recipe_data)
   angelsmods.functions.OV.disable_recipe(recipe_data.name)
 end
 
--- function to create the slag sorting results disables it if it is unused
-local function create_slag_recipes(recipe_base_name, ore_result_products, recipe_icons)
-  local recipes = {}
-  for recipe_index = 1, 9 do
-    local recipe =
-      { name = string.format(recipe_base_name, string.format("-%i", recipe_index)), results = { { "!!" } } }
-    local recipe_used = false
-    local locale_index = {}
-    for result_name, ore_amounts in pairs(ore_result_products or {}) do
-      local ore_name = get_ore_name(result_name)
-      local ore_amount = ore_amounts[recipe_index]
-      local ore_probability = nil
-      if angelsmods.trigger.ores[get_trigger_name[result_name]] and ore_amount > 0 then
-        if ore_amount < 1 then
-          ore_probability, ore_amount = ore_amount, 1
-        end
-        table.insert(
-          recipe.results,
-          { name = ore_name, type = "item", amount = ore_amount, probability = ore_probability }
-        )
-        locale_index[#locale_index + 1] = { "item-name." .. ore_name }
-        recipe_used = true
-      end
-    end
-    if recipe_used then
-      recipe.icons = recipe_icons[recipe_index] -- maybe improve this?
-      table.insert(recipes, recipe)
-    else
-      OV.disable_recipe(recipe.name)
-    end
-    --localisation set-up
-    if #locale_index == 2 then
-      recipe.localised_name = { "recipe-name.angels-slag_processing_2", locale_index[1], locale_index[2] }
-    elseif #locale_index == 3 then
-      recipe.localised_name = { "recipe-name.angels-slag_processing_3", locale_index[1], locale_index[2], locale_index[3] }
-    else
-      recipe.localised_name = { "recipe-name.angels-slag_processing_1", locale_index[1] }
-    end
-  end
-
-  return recipes
-end
-
 -- function to merge tables, but not override indexes, but keep (different) contents
 local function merge_table_of_tables(recipes_table)
   local big_table = {}
