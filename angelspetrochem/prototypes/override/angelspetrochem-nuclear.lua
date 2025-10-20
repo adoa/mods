@@ -323,7 +323,7 @@ if mods["bobplates"] then
   OV.disable_recipe("bob-deuterium-fuel-reprocessing")
   OV.global_replace_technology("bob-deuterium-fuel-reprocessing", "angels-fusion-power-1")
   OV.global_replace_technology("bob-deuterium-fuel-cell-2", "angels-fusion-power-2")
-  OV.disable_technology("bob-deuterium-fuel-reprocessing", "bob-deuterium-fuel-cell-2")
+  OV.disable_technology({"bob-deuterium-fuel-reprocessing", "bob-deuterium-fuel-cell-2"})
   angelsmods.functions.hide("bob-depleted-deuterium-fuel-cell")
 
   -- plutonium processing
